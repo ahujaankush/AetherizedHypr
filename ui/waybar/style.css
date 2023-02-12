@@ -1,0 +1,183 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Inter Medium";
+  font-weight: 400;
+  transition: 0.1s;
+}
+
+window#waybar {
+  background-color: rgba(14, 17, 21, 0.75);
+  color: #ffffff;
+}
+
+#tray {
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+}
+
+#workspaces {
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 6px;
+}
+
+#workspaces button {
+  font-family: "CaskaydiaCove Nerd Font";
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+  color: #b3b7bd;
+  border-radius: 6px;
+  font-size: 22px;
+}
+
+#workspaces button.focused {
+  color: #2798e4;
+  border-bottom: none;
+}
+
+#workspaces button.active {
+  color: #2798e4;
+  border-bottom: none;
+}
+
+#workspaces button.urgent {
+  color: #f7467b;
+}
+
+#custom-launcher {
+  font-family: "CaskaydiaCove Nerd Font Mono";
+  font-size: 35px;
+  color: #9554ff;
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+}
+
+#custom-power {
+  font-family: "CaskaydiaCove Nerd Font Mono";
+  font-size: 35px;
+  color: #f7467b;
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+}
+
+#pulseaudio, #backlight {
+  margin-left: 10px;
+}
+
+#network {
+  margin-right: 20px;
+}
+
+#battery {
+ margin-right: 5px;
+}
+
+widget > * {
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modules-left > widget > * {
+  margin-left: 12px;
+}
+
+.modules-center > widget > * {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.modules-right > widget > * {
+  margin-right: 12px;
+}
+
+@keyframes blink {
+  to {
+    color: #ffffff;
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.critical {
+  color: #f7467b;
+}
+
+#battery.warning {
+  color: #ff8a30;
+}
+
+#battery {
+  color: #1addb0;
+}
+
+tooltip {
+  border-radius: 5px;
+  background: rgba(14, 17, 21, 0.5);
+}
+
+tooltip label {
+  color: #ffffff;
+}
+
+#clock {
+  font-family: "Inter Medium";
+  font-size: 15px;
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+}
+
+#custom-separator {
+  color: #b3b7bd;
+}
+
+#taskbar {
+  background-color: rgba(23, 28, 33, 0.5);
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 6px;
+}
+
+#taskbar button.active {
+  border-bottom-color: #b3b7bd;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+#taskbar button {
+  border-bottom-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+#taskbar button:hover {
+  background-color: rgba(45, 49, 57, 0.5);
+  border-bottom-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}

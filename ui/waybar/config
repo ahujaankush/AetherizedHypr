@@ -1,0 +1,134 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "exclusive": true,
+  "height": 60,
+  "modules-left": [
+    "custom/launcher",
+    "wlr/taskbar"
+  ],
+
+  "modules-center": [
+    "wlr/workspaces"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "bluetooth",
+    "network",
+    "battery",
+    "custom/separator",
+    "tray",
+    "custom/separator",
+    "clock",
+    "custom/power",
+  ],
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 22,
+    "icon-theme": "oomox-aesthetic-dark",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%I:%M:%S}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open calbox --toggle",
+    "interval": 1,
+  },
+  "custom/separator": {
+    "format": "" 
+  },
+  "custom/launcher": {
+    "on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open sidebar --toggle",
+    "on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open symphony --toggle",
+    "format": "" 
+  },
+  "custom/power": {
+    "on-click": "$HOME/.config/hypr/scripts/apps/wlogout.sh",
+    "format": "" 
+  },
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+    "on-scroll-up": "light -U 5",
+    "on-scroll-down": "light -A 5"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-charging": "󱐥",
+    "format-plugged": "󱐥",
+    "format-alt": "{power} watts",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "",
+    "format-muted": "",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "蓼",
+      "headset": "蓼",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "󰕾", ""], 
+    },
+    "on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open census --toggle"
+  },
+  "bluetooth": {
+	  "format": "",
+  	"format-disabled": "",
+  	"format-connected": "",
+  	"tooltip-format": "{controller_alias}\t{controller_address}",
+  	"tooltip-format-connected": "{num_connections} connected\t{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "",
+    "format-ethernet": "󰱔",
+    "format-alt": "{essid} :  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-disconnected": "󰖪", 
+    "tooltip-format": "嬨 {ifname} via {gwaddr}",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": " {ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "wlr/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+    },
+    "format": "{icon}",
+    "format-icons": {
+        "urgent": "",
+        "focused": "",
+        "default": "",
+        "persistent": ""
+    }
+  }
+}
