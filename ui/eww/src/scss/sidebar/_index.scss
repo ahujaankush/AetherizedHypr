@@ -31,12 +31,12 @@
 
 .volover trough highlight {
   border-radius: 12px;
-  background-color: $magenta;
+  background: linear-gradient(90deg, $blue 0%, $magenta 80%);
 }
 
 .brightover trough highlight {
   border-radius: 12px;
-  background-color: $green;
+  background: linear-gradient(90deg, $yellow 0%, $yellow-light 80%);
 }
 
 .scale-label {
@@ -59,7 +59,7 @@
 }
 
 .active {
-  background-color: $green;
+  background: linear-gradient(90deg, $green-light 0%, $green 80%);
   color: $background;
 }
 
@@ -69,7 +69,7 @@
 
 .musicicon {
   font-size: 7.6rem;
-  color: $red;
+  color: $magenta-light;
   background-color: $background-alt;
   border-radius: 12px; 
   padding: 2.7rem;

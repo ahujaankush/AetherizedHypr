@@ -70,7 +70,7 @@
     )
 )
 
-(defwidget sidebar[]
+(defwidget sidebar[] 
   (box :orientation "v" :class "sidebar" :space-evenly false
   ;(time)
   ;(quote)
@@ -81,7 +81,7 @@
   )
   (box :orientation "h" :class "sidecircs" :space-evenly false
     (circbar :value {EWW_RAM.used_mem_perc} :wholeclass "cpubar" :text "󰍛" :classname "red")
-    (circbar :value {round(EWW_CPU.avg, 0)} :wholeclass "rambar" :text "󰘚" :classname "yellow")
+    (circbar :value {round(EWW_CPU.avg, 0)} :wholeclass "rambar" :text "󰘚" :classname "cyan")
   )
   (box :orientation "h" :class "sidebtns" :space-evenly true :spacing 20
           (setbtn  :icon "󰤨" :active "${wifiactive}" :func "~/.config/hypr/ui/eww/scripts/wifi --toggle &")  

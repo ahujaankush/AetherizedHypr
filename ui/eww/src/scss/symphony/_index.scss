@@ -7,7 +7,7 @@
 
 .symvol trough highlight {
   border-radius: 12px;
-  background-color: $blue;
+  background: linear-gradient(90deg, $blue 0%, $magenta 80%);
 }
 
 .symmic trough highlight {
@@ -17,7 +17,7 @@
 
 .symvoltext {
   font-size: 1.7rem;
-  background-color: $blue;
+  background: linear-gradient(90deg, $blue-light 0%, $blue 100%);
   margin-right: 2rem;
   color: $background;
   border-radius: 50%;

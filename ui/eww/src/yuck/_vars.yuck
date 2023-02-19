@@ -10,11 +10,11 @@
 
 (defpoll volume :interval "1s" `pamixer --get-volume`)
 (defpoll mic :interval "1s" `pamixer --source 1 --get-volume`)
-(defpoll brightness :interval "1s" `brillo`)
+(defpoll brightness :interval "1s" `light`)
 
 (defpoll apactive :interval '1s' "~/.config/hypr/ui/eww/scripts/airplanemode --class")
 (defpoll dndctive :interval '1s' "~/.config/hypr/ui/eww/scripts/dnd --class")
-(defpoll wifiactive :interval '1s' "~/.config/hypr/uieww/scripts/wifi --class")
+(defpoll wifiactive :interval '1s' "~/.config/hypr/ui/eww/scripts/wifi --class")
 (defpoll btactive :interval '1s' "~/.config/hypr/ui/eww/scripts/bluetooth --class")
 
 (defpoll songname :interval "1s" "~/.config/hypr/ui/eww/scripts/player --song")
@@ -29,7 +29,7 @@
 
 (defvar profilepic "./assets/profile.png")
 
-(defpoll batteryperc :interval "1s" "cat /sys/class/power_supply/BAT0/capacity")
+(defpoll batteryperc :interval "1s" "cat /sys/class/power_supply/BAT1/capacity")
 (defpoll uptime :interval "1m" "uptime -p | sed 's/up\s*//g' | sed 's/\s*days/d/g' | sed 's/\s*hours/h/g' | sed 's/\s*minutes/m/g'")
 
 (defpoll weathericon :interval "2h" "~/.config/hypr/ui/eww/scripts/weather icon")

@@ -6,7 +6,7 @@
             (cencirc :class "diskcirc" :icon "󰋊" :label "DISK" :color 'red' :value {EWW_DISK["/"].used_perc})
           )
         (box :orientation 'h' :class "cenrow2" :space-evenly false :spacing 20
-            (cencirc :class "diskcirc" :icon "󰁹" :label "BATTERY" :color 'green' :value {EWW_BATTERY["BAT0"].capacity})
+            (cencirc :class "diskcirc" :icon "󰁹" :label "BATTERY" :color 'green' :value {EWW_BATTERY["BAT1"].capacity})
             (cencirc :class "diskcirc" :icon "󰔏" :label "CPU TEMP" :color 'yellow' :value cputemp)
           )
       )
