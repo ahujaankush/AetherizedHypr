@@ -1,26 +1,22 @@
 {
   "layer": "top",
-  "position": "bottom",
-  "exclusive": true,
-  "height": 60,
+  "position": "left",
+  "exclusive": false,
+  "width": 50,
   "modules-left": [
     "custom/launcher",
-    "wlr/taskbar"
+    "wlr/workspaces",
+    "tray",
   ],
-
   "modules-center": [
-    "wlr/workspaces"
+    "wlr/taskbar",
   ],
-
   "modules-right": [
     "pulseaudio",
     "backlight",
+    "battery",
     "bluetooth",
     "network",
-    "battery",
-    "custom/separator",
-    "tray",
-    "custom/separator",
     "clock",
     "custom/power",
   ],
@@ -36,99 +32,129 @@
     "spacing": 10
   },
   "clock": {
-    "format": "{:%I:%M:%S}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}",
-    "on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open calbox --toggle",
-    "interval": 1,
-  },
-  "custom/separator": {
-    "format": "" 
-  },
-  "custom/launcher": {
-    "on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open sidebar --toggle",
-    "on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open symphony --toggle",
-    "format": "" 
-  },
-  "custom/power": {
-    "on-click": "$HOME/.config/hypr/scripts/apps/wlogout.sh",
-    "format": "" 
-  },
-  "backlight": {
-    "format": "{icon}",
-    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-    "on-scroll-up": "light -U 5",
-    "on-scroll-down": "light -A 5"
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon}",
-    "format-charging": "󱐥",
-    "format-plugged": "󱐥",
-    "format-alt": "{power} watts",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-bluetooth-muted": "",
-    "format-muted": "",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "蓼",
-      "headset": "蓼",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", "󰕾", ""], 
-    },
-    "on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open census --toggle"
-  },
-  "bluetooth": {
-	  "format": "",
-  	"format-disabled": "",
-  	"format-connected": "",
-  	"tooltip-format": "{controller_alias}\t{controller_address}",
-  	"tooltip-format-connected": "{num_connections} connected\t{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-  },
-  "network": {
-    "format": "{ifname}",
-    "format-wifi": "",
-    "format-ethernet": "󰱔",
-    "format-alt": "{essid} :  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-disconnected": "󰖪", 
-    "tooltip-format": "嬨 {ifname} via {gwaddr}",
-    "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": " {ifname}",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
-  },
-  "wlr/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "on-click": "activate",
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": []
-    },
-    "format": "{icon}",
-    "format-icons": {
-        "urgent": "",
-        "focused": "",
-        "default": "",
-        "persistent": ""
-    }
-  }
+    "format": "<span foreground='#00ffb1'>{:%I</span>
+<span foreground='#2798e4'>%M}</span>",
+"format-alt": "<span foreground='#2798e4'>{:%d</span>
+<span foreground='#00ffb1'>%m}</span>",
+"tooltip-format": "<tt>{calendar}</tt>",
+"on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open calbox --toggle",
+"interval": 1,
+},
+"custom/launcher": {
+"on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open sidebar --toggle",
+"on-click-right": "$HOME/.config/hypr/scripts/apps/eww.sh open symphony --toggle",
+"format": "󰼁"
+},
+"custom/power": {
+"on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open powermenu --toggle",
+"format": ""
+},
+"backlight": {
+"format": "{icon}",
+"format-icons": [
+  "󰃞",
+  "󰃝",
+  "󰃟",
+  "󰃠"
+],
+"on-click": "killall gammastep || gammastep -O 3500K",
+"on-scroll-up": "light -U 5",
+"on-scroll-down": "light -A 5"
+},
+"battery": {
+"states": {
+  "warning": 30,
+  "critical": 15
+},
+"format": "{icon}",
+"format-charging": "󱐥",
+"format-plugged": "󱐥",
+"format-icons": [
+  "󰂎",
+  "󰁺",
+  "󰁻",
+  "󰁼",
+  "󰁽",
+  "󰁿",
+  "󰂀",
+  "󰂁",
+  "󰂂",
+  "󰁹"
+],
+"on-click": "hyprctl dispatch exec [float] foot battop",
+},
+"pulseaudio": {
+"format": "{icon}",
+"format-bluetooth": "{icon}",
+"format-bluetooth-muted": "󰝟",
+"format-muted": "󰝟",
+"format-source": "",
+"format-source-muted": "",
+"format-icons": {
+  "headphone": "",
+  "hands-free": "蓼",
+  "headset": "蓼",
+  "phone": "",
+  "portable": "",
+  "car": "",
+  "default": [
+    "󰕿",
+    "󰖀",
+    "󰕾"
+  ],
+},
+"on-click": "$HOME/.config/hypr/scripts/apps/eww.sh open census --toggle",
+"on-click-right": "killall pavucontrol-qt || pavucontrol-qt",
+},
+"bluetooth": {
+"format": "󰂯",
+"format-disabled": "󰂲",
+"format-connected": "󰂱",
+"tooltip-format": "{controller_alias}\t{controller_address}",
+"tooltip-format-connected": "{num_connections} connected\t{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+"on-click": "killall blueman-manager || hyprctl dispatch exec [float] blueman-manager",
+},
+"network": {
+"format": "󰖩",
+"format-wifi": "󰖩",
+"format-ethernet": "󰱔",
+"format-disconnected": "󰱟",
+"tooltip-format": "嬨 {ifname} via {gwaddr}",
+"tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+"tooltip-format-ethernet": " {ifname}",
+"tooltip-format-disconnected": "Disconnected",
+"max-length": 50,
+"on-click": "hyprctl dispatch exec [float] foot nmtui",
+},
+"wlr/workspaces": {
+"disable-scroll": false,
+"all-outputs": true,
+"on-click": "activate",
+"persistent_workspaces": {
+  "0": [],
+  "1": [],
+  "2": [],
+  "3": [],
+  "4": [],
+  "5": [],
+  "6": [],
+  "7": [],
+  "8": [],
+  "9": [],
+},
+"format-icons": {
+  "1": "",
+  "2": "",
+  "3": "",
+  "4": "󰏆",
+  "5": "",
+  "6": "",
+  "7": "󰡨",
+  "8": "",
+  "9": "",
+  "10": ""
+},
+"format": "{icon}",
+}
 }

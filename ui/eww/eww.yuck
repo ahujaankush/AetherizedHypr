@@ -7,6 +7,9 @@
 (include "./src/yuck/calbox/_widgets.yuck")
 (include "./src/yuck/calbox/_window.yuck")
 
+(include "./src/yuck/power/_widgets.yuck")
+(include "./src/yuck/power/_window.yuck")
+
 (include "./src/yuck/sidebar/_widgets.yuck")
 (include "./src/yuck/sidebar/_window.yuck")
 

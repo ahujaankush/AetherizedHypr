@@ -16,10 +16,10 @@ function notify {
     if [ "$volume" = "0" ]; then
         icon_name="$ICONDIR/volume-muted"
     else    
-        if [  "$volume" -lt "30" ]; then
+        if [  "$volume" -lt "33" ]; then
             icon_name="$ICONDIR/volume-low"
         else
-          if [ "$volume" -lt "60" ]; then
+          if [ "$volume" -lt "66" ]; then
             icon_name="$ICONDIR/volume-medium"
           else
             icon_name="$ICONDIR/volume-high"

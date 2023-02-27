@@ -8,6 +8,6 @@ $SCRIPTS/utils/wallpaper.sh $HOME/Pictures/Wallpaper/Wallpaper &
 # Waybar
 waybar -c $HYPR/ui/waybar/config -s $HYPR/ui/waybar/style.css &
 # Notification Daemon
-dunst -config $HYPR/ui/dunst/dunstrc &
+swaync --config $HYPR/ui/swaync/config.json --style $HYPR/ui/swaync/style.css &
 # EWW Daemon
 $SCRIPTS/apps/eww.sh daemon &

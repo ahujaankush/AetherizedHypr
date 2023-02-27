@@ -15,13 +15,13 @@ function notify {
         if [  "$brightness" -lt "10" ]; then
             icon_name="$ICONDIR/brightness-low"
         else
-            if [ "$brightness" -lt "30" ]; then
+            if [ "$brightness" -lt "25" ]; then
                 icon_name="$ICONDIR/brightness-low"
             else
-                if [ "$brightness" -lt "70" ]; then
+                if [ "$brightness" -lt "50" ]; then
                     icon_name="$ICONDIR/brightness-medium"
                 else
-                    if [ "$brightness" -lt "100" ]; then
+                    if [ "$brightness" -lt "75" ]; then
                         icon_name="$ICONDIR/brightness-high"
                     else
                         icon_name="$ICONDIR/brightness-full"
