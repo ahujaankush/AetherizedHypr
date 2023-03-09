@@ -21,7 +21,7 @@ getTargetDirectory() {
   test -f "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs" && \
     . "${XDG_CONFIG_HOME:-$HOME/.config}/user-dirs.dirs"
 
-  echo "${XDG_SCREENSHOTS_DIR:-${XDG_PICTURES_DIR:-$HOME}}"
+  echo "$HOME/Pictures/Screenshots"
 }
 DEFAULT_ICON=$HOME/.config/hypr/icons/Miya-icon-theme/src/apps/scalable/accessories-screenshot.svg
 NOTIFY=no

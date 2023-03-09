@@ -4,13 +4,13 @@
 	(box :orientation "v" :class "cal-inner-box" :space-evenly false
   (box :orientation "h" :class "monthyear" "${month} ${year}")
   (box :class "day-names" :orientation "h" :space-evenly "true"
-						(label :text "Su")
 						(label :text "Mo")
 						(label :text "Tu")
 						(label :text "We")
 						(label :text "Th")
 						(label :text "Fr")
 						(label :text "Sa")
+						(label :text "Su")
 	)
 	(calendar :class "cal" :day date :show-details false :show-heading false :show-day-names false))))
 
