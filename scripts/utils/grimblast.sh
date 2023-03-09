@@ -23,7 +23,7 @@ getTargetDirectory() {
 
   echo "$HOME/Pictures/Screenshots"
 }
-DEFAULT_ICON=$HOME/.config/hypr/icons/Miya-icon-theme/src/apps/scalable/accessories-screenshot.svg
+DEFAULT_ICON=$HOME/.config/hypr/ui/icons/aether/dark/shot.png
 NOTIFY=no
 CURSOR=
 
