@@ -4,7 +4,7 @@ SCRIPTS="$HYPR/scripts"
 
 # Wallpaper
 
-swww init && $SCRIPTS/utils/wallpaper.sh $HOME/Pictures/Wallpaper/Wallpaper &
+swww init && $SCRIPTS/utils/wallpaper.sh $HYPR/Wallpaper &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Waybar
